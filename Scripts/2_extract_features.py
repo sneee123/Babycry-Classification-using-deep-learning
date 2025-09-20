@@ -4,7 +4,7 @@ import librosa
 import tensorflow_hub as hub
 from tqdm import tqdm
 
-# Load YAMNet
+
 yamnet_model = hub.load('https://tfhub.dev/google/yamnet/1')
 
 def extract_yamnet_embedding(wav_path):
@@ -38,7 +38,7 @@ if os.path.exists(additional_dir):
     for label in os.listdir(additional_dir):
         label_path = os.path.join(additional_dir, label)
         if not os.path.isdir(label_path):
-            continue  # skip files like .count
+            continue 
 
         os.makedirs(os.path.join(data_dir, label), exist_ok=True)
         for f in os.listdir(label_path):
